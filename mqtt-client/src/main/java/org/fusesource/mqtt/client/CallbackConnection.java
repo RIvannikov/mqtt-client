@@ -742,7 +742,7 @@ public class CallbackConnection {
     }
 
     private short nextMessageId = 1;
-    private short getNextMessageId() {
+    private synchronized short getNextMessageId() {
         short rc = nextMessageId;
         nextMessageId++;
         if(nextMessageId==0) {
